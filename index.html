@@ -3,130 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>笙智達股份有限公司 | 專業健康器材供應商</title>
+    <title>笙智達股份有限公司 SZD Consulting | 專業健康醫學器材</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 自定義醫學藍 */
+        /* 品牌定義：深邃藍與專業金/青 */
         :root {
-            --medical-blue: #0A558C;
-            --trust-teal: #008080;
+            --szd-navy: #0F172A;
+            --szd-accent: #0D9488;
         }
-        .bg-medical { background-color: var(--medical-blue); }
-        .text-medical { color: var(--medical-blue); }
+        .bg-szd-navy { background-color: var(--szd-navy); }
+        .text-szd-navy { color: var(--szd-navy); }
+        .border-szd-accent { border-color: var(--szd-accent); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-medical">卓越醫藥 <span class="text-teal-600">MedTech</span></div>
-            <div class="hidden md:flex space-x-8 font-medium">
+            <div class="flex flex-col">
+                <span class="text-xl md:text-2xl font-bold text-szd-navy tracking-tight">笙智達股份有限公司</span>
+                <span class="text-xs md:text-sm font-semibold text-teal-600 tracking-widest uppercase">SZD Consulting</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium items-center">
                 <a href="#home" class="hover:text-teal-600 transition">首頁</a>
-                <a href="#products" class="hover:text-teal-600 transition">產品中心</a>
-                <a href="#about" class="hover:text-teal-600 transition">關於我們</a>
-                <a href="#contact" class="bg-medical text-white px-5 py-2 rounded-full hover:bg-blue-800 transition">聯絡諮詢</a>
+                <a href="#products" class="hover:text-teal-600 transition">器材供應</a>
+                <a href="#about" class="hover:text-teal-600 transition">關於笙智達</a>
+                <a href="#contact" class="bg-szd-navy text-white px-6 py-2 rounded-lg hover:bg-slate-800 transition shadow-lg">合作諮詢</a>
             </div>
         </div>
     </nav>
 
-    <header id="home" class="relative bg-blue-900 text-white py-32">
+    <header id="home" class="relative bg-slate-900 text-white py-32 overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <div class="md:w-2/3">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6">以科技守護健康<br>提供精準醫療解決方案</h1>
-                <p class="text-xl mb-8 text-blue-100">我們專注於引進全球最先進的健康醫學器材，為醫療機構與居家照護提供專業支持。</p>
-                <div class="flex space-x-4">
-                    <a href="#products" class="bg-teal-500 hover:bg-teal-600 px-8 py-3 rounded-lg font-bold transition">瀏覽器材</a>
-                    <a href="#about" class="border border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-bold transition">了解更多</a>
+                <div class="inline-block px-4 py-1 border border-teal-500 text-teal-400 rounded-full text-sm mb-6 font-semibold">健康醫學器材專業代理</div>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">笙智領航，<br>達致精準醫療新境界</h1>
+                <p class="text-xl mb-8 text-slate-300 max-w-xl">SZD Consulting 致力於提供高品質健康醫學設備與整合性顧問服務，為醫療體系打造卓越的器材供應鏈。</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#products" class="bg-teal-600 hover:bg-teal-700 px-8 py-4 rounded-lg font-bold transition shadow-lg">瀏覽產品線</a>
+                    <a href="#about" class="bg-transparent border border-slate-400 hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-bold transition">了解我們</a>
                 </div>
             </div>
         </div>
-        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
     </header>
 
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12">為何選擇我們？</h2>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="p-8 border rounded-xl hover:shadow-xl transition">
-                    <div class="text-4xl mb-4">🛡️</div>
-                    <h3 class="text-xl font-bold mb-2">專業認證</h3>
-                    <p class="text-gray-600">所有設備均通過國際 ISO、CE 及衛福部醫療器材許可。</p>
-                </div>
-                <div class="p-8 border rounded-xl hover:shadow-xl transition">
-                    <div class="text-4xl mb-4">🔧</div>
-                    <h3 class="text-xl font-bold mb-2">售後保障</h3>
-                    <p class="text-gray-600">專業工程師團隊，提供 24 小時內快速維修回應與保養服務。</p>
-                </div>
-                <div class="p-8 border rounded-xl hover:shadow-xl transition">
-                    <div class="text-4xl mb-4">🌍</div>
-                    <h3 class="text-xl font-bold mb-2">全球選品</h3>
-                    <p class="text-gray-600">嚴選歐美日韓高品質器材，確保診斷與監測的精準度。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="products" class="py-20 bg-gray-100">
+    <section class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold">主力器材</h2>
-                    <p class="text-gray-600">為不同場景提供最合適的健康支持</p>
-                </div>
-                <a href="#" class="text-medical font-bold hover:underline">查看全部產品 →</a>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-szd-navy text-slate-900">為什麼選擇 SZD Consulting？</h2>
+                <div class="h-1 w-20 bg-teal-500 mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-lg overflow-hidden shadow">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">產品圖片 A</div>
-                    <div class="p-4">
-                        <span class="text-xs text-teal-600 font-bold uppercase">專業診斷</span>
-                        <h3 class="font-bold text-lg mt-1">智慧生理監測儀</h3>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-10 border border-slate-100 rounded-2xl hover:shadow-2xl transition-all duration-300 group">
+                    <div class="text-teal-600 mb-6 text-4xl group-hover:scale-110 transition">🔬</div>
+                    <h3 class="text-xl font-bold mb-3">嚴選醫學器材</h3>
+                    <p class="text-gray-600 leading-relaxed">我們與全球頂尖廠商合作，引進符合國際標準與臨床實證的高精密健康監測與治療設備。</p>
                 </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">產品圖片 B</div>
-                    <div class="p-4">
-                        <span class="text-xs text-teal-600 font-bold uppercase">居家照護</span>
-                        <h3 class="font-bold text-lg mt-1">高精密血壓測量組</h3>
-                    </div>
+                <div class="p-10 border border-slate-100 rounded-2xl hover:shadow-2xl transition-all duration-300 group bg-slate-50">
+                    <div class="text-teal-600 mb-6 text-4xl group-hover:scale-110 transition">🤝</div>
+                    <h3 class="text-xl font-bold mb-3">專業顧問導向</h3>
+                    <p class="text-gray-600 leading-relaxed">不只是賣器材。我們提供採購規劃與教育訓練，協助客戶優化器材配置效率。</p>
                 </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">產品圖片 C</div>
-                    <div class="p-4">
-                        <span class="text-xs text-teal-600 font-bold uppercase">復健輔具</span>
-                        <h3 class="font-bold text-lg mt-1">智能輔助行走器</h3>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">產品圖片 D</div>
-                    <div class="p-4">
-                        <span class="text-xs text-teal-600 font-bold uppercase">耗材</span>
-                        <h3 class="font-bold text-lg mt-1">醫用級感測貼片</h3>
-                    </div>
+                <div class="p-10 border border-slate-100 rounded-2xl hover:shadow-2xl transition-all duration-300 group">
+                    <div class="text-teal-600 mb-6 text-4xl group-hover:scale-110 transition">💎</div>
+                    <h3 class="text-xl font-bold mb-3">品質保證與服務</h3>
+                    <p class="text-gray-600 leading-relaxed">所有產品皆通過合法認證，並搭配完整的售後保固服務，確保您的投資無後顧之憂。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-medical rounded-3xl p-10 text-white shadow-2xl">
-                <h2 class="text-3xl font-bold mb-6 text-center">開始您的採購諮詢</h2>
-                <form class="space-y-4">
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="您的姓名" class="w-full px-4 py-3 rounded-lg text-gray-800">
-                        <input type="email" placeholder="電子郵件" class="w-full px-4 py-3 rounded-lg text-gray-800">
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+                <div class="md:w-1/3 bg-szd-navy p-12 text-white">
+                    <h2 class="text-2xl font-bold mb-8">聯繫笙智達</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="mr-4">📍</span>
+                            <span class="text-slate-300">專業顧問團隊為您服務</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-4">📧</span>
+                            <span class="text-slate-300">service@szd.com.tw</span>
+                        </li>
+                    </ul>
+                    <div class="mt-20 pt-10 border-t border-slate-700">
+                        <p class="text-sm text-slate-400 italic">SZD Consulting - Empowering Health Through Technology</p>
                     </div>
-                    <input type="text" placeholder="公司/機構名稱" class="w-full px-4 py-3 rounded-lg text-gray-800">
-                    <textarea placeholder="您的需求說明" rows="4" class="w-full px-4 py-3 rounded-lg text-gray-800"></textarea>
-                    <button class="w-full bg-teal-500 hover:bg-teal-600 py-3 rounded-lg font-bold text-xl transition">提交諮詢</button>
-                </form>
+                </div>
+                <div class="md:w-2/3 p-12">
+                    <h3 class="text-2xl font-bold mb-6 text-slate-800">器材需求諮詢單</h3>
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">姓名</label>
+                            <input type="text" placeholder="您的稱呼" class="w-full px-4 py-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">聯繫電話</label>
+                            <input type="text" placeholder="您的號碼" class="w-full px-4 py-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-semibold mb-2">機構名稱</label>
+                            <input type="text" placeholder="醫院/診所/藥局或公司名稱" class="w-full px-4 py-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-semibold mb-2">諮詢內容</label>
+                            <textarea rows="4" placeholder="請告訴我們您的需求（如：器材種類、數量或預算預估）" class="w-full px-4 py-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white py-4 rounded-xl font-bold text-lg shadow-lg transition-all">送出諮詢申請</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-10 text-center">
-        <p>© 2026 卓越醫藥科技有限公司. All Rights Reserved.</p>
+    <footer class="bg-slate-900 text-slate-500 py-12 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center border-t border-slate-800 pt-8">
+            <div class="mb-4 md:mb-0">
+                <span class="text-lg font-bold text-slate-300">笙智達 SZD Consulting</span>
+                <p class="text-sm">© 2026 笙智達股份有限公司. 版權所有</p>
+            </div>
+            <div class="flex space-x-6 text-sm">
+                <a href="#" class="hover:text-white transition">隱私權政策</a>
+                <a href="#" class="hover:text-white transition">服務條款</a>
+                <a href="#" class="hover:text-white transition">人才招募</a>
+            </div>
+        </div>
     </footer>
 
 </body>
