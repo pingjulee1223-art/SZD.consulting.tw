@@ -43,7 +43,13 @@
             box-shadow: 0 4px 30px rgba(0,0,0,0.03);
         }
         .nav-container { display: flex; justify-content: space-between; width: 100%; align-items: center; }
+        
+        /* Logo 區域調整 */
+        .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; transition: var(--transition); }
+        .logo:hover { opacity: 0.8; }
         .logo img { height: 60px; width: auto; object-fit: contain; }
+        .logo-text { font-size: 1.6rem; font-weight: 700; color: var(--dark); letter-spacing: 1px; }
+        .logo-text span { color: var(--primary); }
         
         .nav-links { list-style: none; display: flex; align-items: center; }
         .nav-links li a { text-decoration: none; color: var(--dark); margin-left: 30px; font-weight: 500; font-size: 1.05rem; transition: var(--transition); }
@@ -146,6 +152,7 @@
             .detail-flex, .detail-flex:nth-child(even) { flex-direction: column; gap: 40px; }
             .hy90-col { width: auto; }
             .section-title { font-size: 2.2rem; }
+            .logo-text { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -157,6 +164,7 @@
             <a href="#" class="logo">
                 <!-- 檔案名稱：Logo.jpg -->
                 <img src="Logo.jpg" alt="笙智達 SZD Consulting Logo">
+                <div class="logo-text">SZD <span>Consulting</span></div>
             </a>
             <ul class="nav-links">
                 <li><a href="#features">核心技術</a></li>
