@@ -142,3 +142,217 @@
 
 </body>
 </html>
+/* 變數定義 */
+:root {
+    --primary-green: #00796b;
+    --dark-grey: #263238;
+    --light-grey: #f5f7f7;
+    --white: #ffffff;
+    --accent-green: #4db6ac;
+    --text-main: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 導覽列 */
+nav {
+    background: rgba(255, 255, 255, 0.95);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.logo span { color: var(--dark-grey); }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--dark-grey);
+    margin-left: 25px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover { color: var(--primary-green); }
+
+/* 英雄區 */
+.hero {
+    background: linear-gradient(135deg, var(--dark-grey) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: var(--accent-green);
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+/* 按鈕樣式 */
+.btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--accent-green);
+    color: var(--dark-grey);
+}
+
+.btn-outline {
+    border: 2px solid var(--white);
+    color: var(--white);
+    margin-left: 15px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* 網格系統 */
+.section { padding: 80px 0; }
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: var(--primary-green);
+}
+
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+/* 卡片設計 */
+.glass-card {
+    background: rgba(0, 121, 107, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 121, 107, 0.1);
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-card:hover { transform: translateY(-10px); }
+
+.bg-dark { background: var(--dark-grey); }
+.text-light { color: var(--white); }
+
+/* 表格優化 */
+.table-responsive { overflow-x: auto; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+th { background: #eceff1; }
+.active { background: #f1f8f7; font-weight: bold; color: var(--primary-green); }
+
+/* 頁尾 */
+.footer {
+    background: #1a2124;
+    color: #90a4ae;
+    padding: 60px 0 20px;
+}
+
+.footer h3 { color: var(--white); margin-bottom: 20px; }
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 10px; }
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.8rem;
+    border-top: 1px solid #37474f;
+    padding-top: 20px;
+}
+
+/* 簡單動畫 */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 手機版適配 */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .nav-links { display: none; } /* 簡化手機導覽 */
+    .btn-outline { margin-left: 0; margin-top: 10px; }
+}
