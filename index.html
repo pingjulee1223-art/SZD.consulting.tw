@@ -6,382 +6,146 @@
     <meta name="description" content="HY-90 頂級氫氣機 - 開啟 5N5 純淨氫活時代，榮獲台灣金玉獎，日本頂尖核心技術。">
     <meta name="keywords" content="HY-90, 氫氣機, 5N5純度, 日本AGC膜, 笙智達">
     <title>SZD Consulting | HY-90 頂級氫氣機 - 官方旗艦網站</title>
-    
-    <!-- 引入專業字體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* UI 變數定義 */
-        :root {
-            --primary: #00796b;
-            --secondary: #4db6ac;
-            --dark: #263238;
-            --award-gold: #f57f17;
-            --bg-light: #f8fafb;
-            --white: #ffffff;
-            --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        /* 基礎樣式 */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {--primary: #00796b; --secondary: #4db6ac; --dark: #263238; --award-gold: #f57f17; --bg-light: #f8fafb; --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Noto Sans TC', sans-serif; color: #444; line-height: 1.8; background-color: var(--bg-light); overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
-
-        /* 導覽列 */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            height: 90px;
-            display: flex;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.03);
-        }
-        .nav-container { display: flex; justify-content: space-between; width: 100%; align-items: center; }
-        
-        /* Logo 區域調整 */
-        .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; transition: var(--transition); }
-        .logo:hover { opacity: 0.8; }
-        .logo img { height: 60px; width: auto; object-fit: contain; }
-        .logo-text { font-size: 1.6rem; font-weight: 700; color: var(--dark); letter-spacing: 1px; }
-        .logo-text span { color: var(--primary); }
-        
-        .nav-links { list-style: none; display: flex; align-items: center; }
-        .nav-links li a { text-decoration: none; color: var(--dark); margin-left: 30px; font-weight: 500; font-size: 1.05rem; transition: var(--transition); }
-        .nav-links li a:hover { color: var(--primary); }
-
-        /* 英雄區 (UI: 沈浸式視覺) */
-        .hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            color: var(--white);
-            padding: 100px 0 140px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-        }
-        .hero::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/cubes.png'); opacity: 0.1;
-        }
-        .hero-content { position: relative; z-index: 2; }
-        .hero h1 { font-size: 4rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 5px; text-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .hero .tagline { font-size: 2rem; color: var(--secondary); margin-bottom: 40px; font-weight: 300; letter-spacing: 3px; }
-        .hero-img-box { position: relative; max-width: 550px; margin: 40px auto; animation: float 6s ease-in-out infinite; }
-        .hero-img { width: 100%; height: auto; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4)); }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* 榮譽區 (UI: Trust Indicator) */
-        .award-banner { background: #fffdf2; border-bottom: 1px solid #ffe082; padding: 60px 0; margin-top: -50px; position: relative; z-index: 10; border-radius: 50px 50px 0 0; box-shadow: 0 -20px 40px rgba(0,0,0,0.05); }
-        .award-flex { display: flex; align-items: center; justify-content: center; gap: 40px; }
-        .award-img { height: 160px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 4px solid white; transition: var(--transition); }
-        .award-img:hover { transform: scale(1.05) rotate(2deg); }
-        .award-info h2 { color: var(--award-gold); font-size: 1.8rem; margin-bottom: 10px; }
-        .award-info p { font-size: 1.2rem; color: #795548; font-weight: 500; }
-
-        /* 核心特色 */
-        .section { padding: 120px 0; }
-        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 70px; color: var(--primary); position: relative; font-weight: 700; }
-        .section-title::after { content: ''; display: block; width: 80px; height: 6px; background: var(--secondary); margin: 25px auto; border-radius: 10px; }
-
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .feature-card {
-            background: var(--white); padding: 60px 40px; border-radius: 40px; transition: var(--transition);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.01);
-            text-align: center; position: relative; overflow: hidden;
-        }
-        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--primary); transform: scaleX(0); transition: var(--transition); }
-        .feature-card:hover::before { transform: scaleX(1); }
-        .feature-card:hover { transform: translateY(-20px); box-shadow: 0 30px 60px rgba(0,121,107,0.12); }
-        .feature-card h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 25px; }
-        .feature-card p { color: #666; font-size: 1.15rem; line-height: 1.8; }
-
-        /* 旗艦細節展示 (New Detailed Showcase) */
-        .detail-showcase { background: white; padding: 100px 0; border-radius: 100px 0 100px 0; margin: 40px 0; }
-        .detail-flex { display: flex; align-items: center; gap: 80px; margin-bottom: 80px; }
-        .detail-flex:nth-child(even) { flex-direction: row-reverse; }
-        .detail-img { flex: 1; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
-        .detail-img img { width: 100%; display: block; transition: transform 0.8s; }
-        .detail-img:hover img { transform: scale(1.1); }
-        .detail-text { flex: 1.2; }
-        .detail-text h3 { font-size: 2.2rem; color: var(--dark); margin-bottom: 25px; border-left: 8px solid var(--primary); padding-left: 20px; }
-        .detail-text p { font-size: 1.2rem; color: #555; }
-
-        /* 對比表格 */
-        .comparison-box { background: var(--white); border-radius: 50px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.06); }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 35px; text-align: center; border-bottom: 1px solid #f0f0f0; font-size: 1.1rem; }
-        th { background: #fcfdfe; color: var(--dark); font-size: 1.3rem; font-weight: 700; }
-        .hy90-col { background: #f0f8f7; color: var(--primary); font-weight: 700; width: 40%; }
-        .check-icon { color: var(--primary); font-size: 1.4rem; margin-right: 8px; }
-
-        /* 底部參數 */
-        .footer { background: var(--dark); color: #cbd5e0; padding: 120px 0 60px; position: relative; }
-        .footer::after { content: 'SZD'; position: absolute; bottom: 10px; right: 20px; font-size: 8rem; font-weight: 900; opacity: 0.03; color: white; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 100px; }
-        .spec-list { list-style: none; }
-        .spec-list li { margin-bottom: 20px; display: flex; align-items: center; border-bottom: 1px solid #3d4d55; padding-bottom: 12px; transition: 0.3s; }
-        .spec-list li:hover { border-bottom-color: var(--secondary); transform: translateX(10px); }
-        .spec-list li strong { color: var(--white); width: 160px; font-size: 1.1rem; }
-        .footer h3 { color: var(--white); margin-bottom: 40px; font-size: 2.2rem; position: relative; }
-        .footer h3::before { content: ''; position: absolute; bottom: -10px; left: 0; width: 40px; height: 4px; background: var(--secondary); }
-        .contact-box p { font-size: 1.2rem; margin-bottom: 15px; }
-        .copyright { text-align: center; margin-top: 100px; padding-top: 40px; border-top: 1px solid #3d4d55; font-size: 1rem; color: #7f8c8d; }
-
-        /* 按鈕樣式 */
-        .btn-main { background: var(--secondary); color: var(--dark); padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; display: inline-block; transition: var(--transition); box-shadow: 0 10px 30px rgba(77, 182, 172, 0.3); }
-        .btn-main:hover { transform: translateY(-5px) scale(1.05); background: var(--white); }
-
-        /* 手機版適配 */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; letter-spacing: 2px; }
-            .hero .tagline { font-size: 1.5rem; }
-            .nav-links { display: none; }
-            .footer-grid { grid-template-columns: 1fr; gap: 60px; }
-            .award-flex { flex-direction: column; text-align: center; gap: 20px; }
-            .award-img { height: 120px; }
-            .detail-flex, .detail-flex:nth-child(even) { flex-direction: column; gap: 40px; }
-            .hy90-col { width: auto; }
-            .section-title { font-size: 2.2rem; }
-            .logo-text { font-size: 1.2rem; }
-        }
+        body { font-family: 'Noto Sans TC', sans-serif; color: #444; line-height: 1.8; background-color: var(--bg-light); }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-    <!-- 導覽列 -->
-    <nav>
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <!-- 檔案名稱：Logo.jpg -->
-                <img src="Logo.jpg" alt="笙智達 SZD Consulting Logo">
-                <div class="logo-text">SZD <span>Consulting</span></div>
+    <nav class="bg-white/95 backdrop-blur-md h-[90px] flex items-center sticky top-0 z-[1000] shadow-sm">
+        <div class="container mx-auto px-6 flex justify-between items-center w-full">
+            <a href="#" class="flex items-center gap-4 hover:opacity-80 transition-opacity">
+                <img src="Logo.jpg" alt="SZD Logo" class="h-[60px] w-auto object-contain">
+                <div class="text-2xl font-bold text-slate-800 tracking-tight">SZD <span class="text-teal-700">Consulting</span></div>
             </a>
-            <ul class="nav-links">
-                <li><a href="#features">核心技術</a></li>
-                <li><a href="#details">旗艦細節</a></li>
-                <li><a href="#comparison">效能比較</a></li>
-                <li><a href="#specs">技術參數</a></li>
+            <ul class="hidden md:flex items-center space-x-8 font-medium">
+                <li><a href="#features" class="hover:text-teal-700 transition-colors">核心技術</a></li>
+                <li><a href="#details" class="hover:text-teal-700 transition-colors">旗艦細節</a></li>
+                <li><a href="#comparison" class="hover:text-teal-700 transition-colors">效能比較</a></li>
+                <li><a href="#contact" class="bg-teal-700 text-white px-6 py-2 rounded-full hover:bg-teal-800 transition-all">合作諮詢</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- 英雄區 -->
-    <header class="hero">
-        <div class="container hero-content">
-            <h1>HY-90 頂級氫氣機</h1>
-            <p class="tagline">5N5 極致純淨 ‧ 投資健康未來</p>
-            <div class="hero-img-box">
-                <!-- 更新為實機質感主圖：product.png -->
-                <img src="product.png" alt="HY-90 旗艦機型實機質感" class="hero-img">
+    <header class="hero text-white pt-24 pb-36 text-center relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-[5px] drop-shadow-lg">HY-90 頂級氫氣機</h1>
+            <p class="text-xl md:text-3xl text-teal-200 mb-10 font-light tracking-widest">5N5 極致純淨 ‧ 投資健康未來</p>
+            <div class="max-w-[550px] mx-auto mb-10 animate-float">
+                <img src="product.png" alt="HY-90 實機質感" class="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.4)]">
             </div>
-            <p style="max-width: 800px; margin: 0 auto 40px; opacity: 0.95; font-size: 1.3rem; font-weight: 300;">日本頂尖核心技術 x 台灣精密工藝，經國立中央大學權威驗證，給您最純淨的呼吸體驗。</p>
-            <a href="#details" class="btn-main">立即探索</a>
+            <p class="max-w-3xl mx-auto mb-10 opacity-90 text-lg md:text-xl font-light">日本頂尖核心技術 x 台灣精密工藝，經國立中央大學權威驗證，給您最純淨的呼吸體驗。</p>
+            <a href="#details" class="inline-block bg-teal-400 text-slate-900 px-12 py-4 rounded-full font-bold text-xl hover:bg-white hover:scale-105 transition-all shadow-xl">立即探索</a>
         </div>
     </header>
 
-    <!-- 榮譽區 (金玉獎) -->
-    <div class="award-banner">
-        <div class="container">
-            <div class="award-flex">
-                <!-- 台灣金玉獎認證圖片 -->
-                <img src="hy90.jpg" alt="台灣金玉獎證書" class="award-img">
-                <div class="award-info">
-                    <h2>榮獲【台灣優良產品金玉獎】</h2>
-                    <p>國家級品質肯定 ‧ 值得全家人信賴的健康承諾</p>
+    <div class="relative z-10 -mt-12">
+        <div class="container mx-auto px-6">
+            <div class="bg-[#fffdf2] border-b border-amber-200 rounded-[50px_50px_0_0] shadow-xl p-10 flex flex-col md:flex-row items-center justify-center gap-10 text-center md:text-left">
+                <img src="hy90.jpg" alt="台灣金玉獎" class="h-40 rounded-xl shadow-lg border-4 border-white hover:scale-105 transition-transform">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-amber-600 mb-2">榮獲【台灣優良產品金玉獎】</h2>
+                    <p class="text-xl text-stone-600 font-medium">國家級品質肯定 ‧ 值得全家人信賴的健康承諾</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 核心特色區 -->
-    <section id="features" class="section">
-        <div class="container">
-            <h2 class="section-title">領先業界的三大指標</h2>
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <h3>日本 AGC 頂規膜材</h3>
-                    <p>搭載日本旭硝子 (AGC) 質子交換膜。具備極致穩定性，確保產氫過程「零臭氧」，給您最安心的純淨感受。</p>
-                </article>
-                <article class="feature-card">
-                    <h3>5N5 權威純度</h3>
-                    <p>氫氣純度達 ≥ 99.9995%，高於美國 FDA 醫療級標準。經中央大學大氣分析實驗室數據證實，不妥協的品質。</p>
-                </article>
-                <article class="feature-card">
-                    <h3>超導體散熱壽命</h3>
-                    <p>專利金屬散熱外殼，支援連續使用 12 小時不過熱。機芯壽命達 6000 小時以上，經得起時間考驗的耐用性。</p>
-                </article>
+    <section id="features" class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-4xl font-bold text-teal-800 mb-20 relative after:content-[''] after:block after:w-20 after:h-1.5 after:bg-teal-400 after:mx-auto after:mt-6 after:rounded-full">領先業界的三大指標</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-12 rounded-[40px] shadow-sm border border-slate-50 hover:-translate-y-4 hover:shadow-2xl transition-all text-center">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-6">日本 AGC 頂規膜材</h3>
+                    <p class="text-slate-500 text-lg leading-relaxed">搭載日本旭硝子 (AGC) 質子交換膜。具備極致穩定性，確保產氫過程「零臭氧」。</p>
+                </div>
+                <div class="bg-white p-12 rounded-[40px] shadow-sm border border-slate-50 hover:-translate-y-4 hover:shadow-2xl transition-all text-center">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-6">5N5 權威純度</h3>
+                    <p class="text-slate-500 text-lg leading-relaxed">氫氣純度達 ≥ 99.9995%，高於美國 FDA 醫療級標準。經中央大學數據證實。</p>
+                </div>
+                <div class="bg-white p-12 rounded-[40px] shadow-sm border border-slate-50 hover:-translate-y-4 hover:shadow-2xl transition-all text-center">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-6">超導體散熱壽命</h3>
+                    <p class="text-slate-500 text-lg leading-relaxed">專利金屬散熱外殼，支援連續使用 12 小時。機芯壽命達 6000 小時以上。</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 旗艦細節展示 (配合 PDF 內容) -->
-    <section id="details" class="detail-showcase">
-        <div class="container">
-            <h2 class="section-title">旗艦級細節工藝</h2>
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">合作諮詢</h2>
+                <p class="text-slate-500 text-lg">請留下您的資訊，我們的專員將盡快與您聯繫。</p>
+            </div>
             
-            <!-- 細節 1：更新為實機細節圖 product1.png -->
-            <div class="detail-flex">
-                <div class="detail-img">
-                    <img src="product1.png" alt="HY-90 智慧介面實機細節">
+            <form id="contact-form" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">姓名 *</label>
+                        <input type="text" name="name" required class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all" placeholder="請輸入姓名">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">聯絡電話 *</label>
+                        <input type="tel" name="phone" required class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all" placeholder="0912-345-678">
+                    </div>
                 </div>
-                <div class="detail-text">
-                    <h3>4.3 吋 TFT 智慧管理</h3>
-                    <p>搭載彩色直覺式觸控螢幕，自動偵測水質 (TDS)、水位及管路阻塞。即時監控機器狀態，讓操作變得簡單、優雅且絕對安全。</p>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">電子郵箱 *</label>
+                    <input type="email" name="email" required class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all" placeholder="example@mail.com">
                 </div>
-            </div>
-
-            <!-- 細節 2 -->
-            <div class="detail-flex">
-                <div class="detail-img">
-                    <img src="pem.png" alt="日本AGC核心技術圖">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="company" class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all" placeholder="公司名稱 (選填)">
+                    <input type="text" name="location" class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all" placeholder="公司地區 (選填)">
                 </div>
-                <div class="detail-text">
-                    <h3>氫氧分離 PEM 技術</h3>
-                    <p>採用世界領先的 PEM 質子交換膜技術，純水電解直接產生高純度氫氣。低電壓運作，效率更高，使用壽命比一般他牌延長 4 倍。</p>
-                </div>
-            </div>
+                <textarea name="message" class="w-full px-6 py-4 rounded-[30px] border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all h-32" placeholder="請描述您的需求..."></textarea>
+                <button type="submit" id="submit-btn" class="w-full bg-teal-700 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-teal-800 transition-all transform hover:scale-[1.01] active:scale-[0.98] text-lg tracking-widest">
+                    送出諮詢申請
+                </button>
+            </form>
         </div>
     </section>
 
-    <!-- 效能對比區 -->
-    <section id="comparison" class="section" style="background: #f0f4f4;">
-        <div class="container">
-            <h2 class="section-title">規格決定您的健康價值</h2>
-            <div class="comparison-box">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>比較項目</th>
-                            <th class="hy90-col">HY-90 (旗艦機型)</th>
-                            <th>市售一般機型</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>核心膜材</td>
-                            <td class="hy90-col">日本 AGC 質子交換膜</td>
-                            <td>一般/杜邦膜 (易衰減)</td>
-                        </tr>
-                        <tr>
-                            <td>氫氣純度</td>
-                            <td class="hy90-col">≥ 99.9995% (5N5)</td>
-                            <td>約 99.9% (4N)</td>
-                        </tr>
-                        <tr>
-                            <td>連續產氫時間</td>
-                            <td class="hy90-col"><span class="check-icon">✓</span> 12 小時 (高效散熱)</td>
-                            <td>約 3-5 小時 (易過熱保護)</td>
-                        </tr>
-                        <tr>
-                            <td>機芯耐用壽命</td>
-                            <td class="hy90-col"><span class="check-icon">✓</span> ≥ 6000 小時</td>
-                            <td>約 1500 小時</td>
-                        </tr>
-                        <tr>
-                            <td>智慧管理系統</td>
-                            <td class="hy90-col">彩色 TFT / 多重偵測</td>
-                            <td>簡易燈號或無顯示</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <footer class="bg-slate-900 text-slate-400 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-white text-3xl font-bold mb-6">笙智達 (SZD Consulting)</h3>
+            <p class="text-xl mb-10 tracking-[0.2em]">投資健康，從選對「氫」開始</p>
+            <div class="border-t border-slate-800 pt-10 text-sm tracking-widest">
+                &copy; 2026 SZD Consulting. All Rights Reserved. 專業代理：HY-90 頂級氫氣機系列。
             </div>
-        </div>
-    </section>
-
-    <!-- 底部參數與聯絡 -->
-    <footer class="footer" id="specs">
-        <div class="container footer-grid">
-            <div class="spec-info">
-                <h3>技術參數總覽</h3>
-                <ul class="spec-list">
-                    <li><strong>產氣流量</strong> 250 / 500 cc/min (智慧調節)</li>
-                    <li><strong>核心技術</strong> PEM 質子交換膜 (氫氧分離技術)</li>
-                    <li><strong>運作模式</strong> 純水電解 / 支援雙人共享模式</li>
-                    <li><strong>智慧偵測</strong> 自動水質檢測、水位監控、管路阻塞偵測</li>
-                    <li><strong>電壓功耗</strong> 110V / 低耗電節能設計</li>
-                </ul>
-            </div>
-            <div class="contact-box">
-               <section id="contact" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6 max-w-3xl">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4 text-slate-800">合作諮詢</h2>
-            <p class="text-gray-600">請留下您的資訊，我們的專員將盡快與您聯繫。</p>
-        </div>
-
-        <form id="contact-form" class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">姓名 *</label>
-                    <input type="text" name="name" required 
-                        class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all placeholder:text-slate-400" 
-                        placeholder="請輸入姓名">
-                </div>
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">聯絡電話 *</label>
-                    <input type="tel" name="phone" required 
-                        class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all placeholder:text-slate-400" 
-                        placeholder="0912-345-678">
-                </div>
-            </div>
-
-            <div>
-                <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">電子郵箱 *</label>
-                <input type="email" name="email" required 
-                    class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all placeholder:text-slate-400" 
-                    placeholder="example@mail.com">
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-sm font-bold text-slate-500 mb-2 ml-2">公司名稱 (選填)</label>
-                    <input type="text" name="company" 
-                        class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all placeholder:text-slate-400" 
-                        placeholder="您的公司">
-                </div>
-                <div>
-                    <label class="block text-sm font-bold text-slate-500 mb-2 ml-2">公司地區 (選填)</label>
-                    <input type="text" name="location" 
-                        class="w-full px-6 py-4 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all placeholder:text-slate-400" 
-                        placeholder="例如：台北市">
-                </div>
-            </div>
-
-            <div>
-                <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">諮詢內容</label>
-                <textarea name="message" 
-                    class="w-full px-6 py-4 rounded-[30px] border border-white/60 bg-white/40 backdrop-blur-md shadow-sm focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all h-32 placeholder:text-slate-400" 
-                    placeholder="請描述您的需求..."></textarea>
-            </div>
-
-            <button type="submit" id="submit-btn" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl shadow-lg transition-all transform hover:scale-[1.01] active:scale-[0.98]">
-                送出諮詢申請
-            </button>
-        </form>
-    </div>
-</section>
-                <p style="color: var(--secondary); font-weight: 700; font-size: 1.5rem;">笙智達 (SZD Consulting)</p>
-                <p>專業代理 ‧ 技術支持 ‧ 健康諮詢</p>
-                <p>致力於引領台灣進入純淨氫活新紀元</p>
-                <div style="margin-top: 40px; border-left: 4px solid var(--secondary); padding-left: 20px;">
-                    <p style="font-style: italic;">「投資健康，從選對『氫』開始」</p>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 SZD Consulting. All Rights Reserved. 專業代理：HY-90 頂級氫氣機系列。
         </div>
     </footer>
 
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzA-v7nq6j-3LEVvyoCLnGVvzlwZhgm9CZz0rnyx6jY6SoLWurzVSqBk-GaesSZxt0/exec';
+        const form = document.getElementById('contact-form');
+        const btn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.innerHTML = '正在為您傳送...';
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    alert('感謝您的諮詢！我們將盡快與您聯繫。');
+                    btn.disabled = false;
+                    btn.innerHTML = '送出諮詢申請';
+                    form.reset();
+                })
+                .catch(error => {
+                    alert('抱歉，傳送失敗，請稍後再試。');
+                    btn.disabled = false;
+                    btn.innerHTML = '重新送出';
+                });
+        });
+    </script>
 </body>
 </html>
