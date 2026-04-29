@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HY-90 頂級氫氣機 - 採用日本 AGC 旭硝子技術，提供 5N5 極致純度氫氣，開啟純淨氫活新時代。">
-    <title>HY-90 頂級氫氣機 | 5N5 純淨氫活新時代</title>
+    <meta name="description" content="HY-90 頂級氫氣機 - 榮獲台灣金玉獎肯定，搭載日本頂尖技術，提供 5N5 極致純度氫氣。">
+    <title>SZD Consulting | HY-90 頂級氫氣機</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* 直接整合 CSS 樣式，防止路徑失效 */
         :root {
             --primary-green: #00796b;
             --dark-grey: #263238;
@@ -21,20 +20,13 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            color: #333;
-            line-height: 1.6;
-            background-color: var(--light-bg);
-        }
-
+        body { font-family: 'Noto Sans TC', sans-serif; color: #333; line-height: 1.6; background-color: var(--light-bg); }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
         /* 導覽列 */
         nav {
             background: rgba(255, 255, 255, 0.98);
-            height: 70px;
+            height: 80px;
             display: flex;
             align-items: center;
             position: sticky;
@@ -42,83 +34,61 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
         .nav-container { display: flex; justify-content: space-between; width: 100%; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-green); }
-        .logo span { color: var(--dark-grey); }
+        .logo img { height: 55px; vertical-align: middle; } 
+        
         .nav-links { list-style: none; display: flex; }
-        .nav-links li a { text-decoration: none; color: var(--dark-grey); margin-left: 25px; transition: 0.3s; }
+        .nav-links li a { text-decoration: none; color: var(--dark-grey); margin-left: 25px; transition: 0.3s; font-weight: 500; }
         .nav-links li a:hover { color: var(--primary-green); }
 
         /* 英雄區 */
         .hero {
             background: linear-gradient(135deg, var(--dark-grey) 0%, var(--primary-green) 100%);
             color: var(--white);
-            padding: 100px 0;
+            padding: 80px 0;
             text-align: center;
             clip-path: ellipse(150% 100% at 50% 0%);
         }
+        .hero h1 { font-size: 3.2rem; margin-bottom: 10px; letter-spacing: 2px; }
+        .tagline { font-size: 1.6rem; color: var(--accent); margin-bottom: 30px; font-weight: 300; }
+        .hero-img { max-width: 420px; width: 100%; margin: 20px auto; display: block; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3)); }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; letter-spacing: 2px; }
-        .tagline { font-size: 1.6rem; color: var(--accent); margin-bottom: 25px; font-weight: 300; }
-        .hero-desc { max-width: 750px; margin: 0 auto 40px; opacity: 0.9; font-size: 1.1rem; }
+        /* 產品榮譽區 (金玉獎) */
+        .award-section { background: white; padding: 40px 0; text-align: center; border-bottom: 1px solid #eee; }
+        .award-badge { display: inline-flex; align-items: center; gap: 20px; background: #fffdf2; border: 1px solid #ffe082; padding: 15px 30px; border-radius: 50px; }
+        .award-img { height: 60px; }
+        .award-text { text-align: left; }
+        .award-text h4 { color: #f57f17; margin-bottom: 5px; }
 
-        /* 按鈕 */
-        .btn { padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block; }
-        .btn-primary { background: var(--accent); color: var(--dark-grey); border: none; }
-        .btn-outline { border: 2px solid var(--white); color: var(--white); margin-left: 15px; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-
-        /* 區塊標題 */
-        .section { padding: 90px 0; }
+        /* 通用區塊 */
+        .section { padding: 80px 0; }
         .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: var(--primary-green); }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent); margin: 15px auto; border-radius: 2px; }
 
+        /* 個人資質區 (證照) */
+        .personal-section { background: #fafafa; padding: 80px 0; }
+        .personal-container { display: flex; align-items: center; justify-content: center; gap: 50px; flex-wrap: wrap; }
+        .cert-img { max-width: 320px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border: 8px solid white; }
+        .personal-text { max-width: 500px; }
+
         /* 網格與卡片 */
         .grid { display: grid; gap: 30px; }
-        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .feature-card { background: var(--white); padding: 40px 30px; border-radius: 20px; text-align: center; transition: 0.4s; box-shadow: 0 10px 25px rgba(0,0,0,0.03); border-top: 5px solid var(--accent); }
+        .feature-card:hover { transform: translateY(-10px); }
 
-        .glass-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-bottom: 5px solid var(--accent);
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 45px 30px;
-            border-radius: 20px;
-            text-align: center;
-            transition: 0.4s;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-        }
-
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        .icon { font-size: 3.5rem; display: block; margin-bottom: 20px; }
-
-        /* 表格優化 */
+        /* 表格與頁尾 */
         .table-container { background: var(--white); border-radius: 20px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        th, td { padding: 22px; text-align: center; border-bottom: 1px solid #f0f0f0; }
-        th { background: #f9fbfb; color: var(--primary-green); font-size: 1.1rem; }
-        .active-col { background: #f0f7f6; font-weight: bold; color: var(--primary-green); border-left: 2px solid #e0eeed; border-right: 2px solid #e0eeed; }
-
-        /* 頁尾與參數 */
+        th, td { padding: 20px; text-align: center; border-bottom: 1px solid #f0f0f0; }
+        th { background: #f9fbfb; color: var(--primary-green); }
+        .active-col { background: #f0f7f6; font-weight: bold; color: var(--primary-green); }
         .footer { background: var(--dark-grey); color: #b0bec5; padding: 80px 0 30px; }
-        .footer h3 { color: var(--white); margin-bottom: 25px; font-size: 1.5rem; }
-        .footer-list { list-style: none; }
-        .footer-list li { margin-bottom: 12px; border-left: 3px solid var(--accent); padding-left: 15px; }
-        .copyright { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #37474f; font-size: 0.9rem; }
 
-        /* 響應式 */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .nav-links { display: none; }
-            .btn-outline { margin-left: 0; margin-top: 15px; width: 100%; }
-            .btn-primary { width: 100%; }
+            .personal-container { text-align: center; }
         }
     </style>
 </head>
@@ -126,12 +96,13 @@
 
     <nav>
         <div class="container nav-container">
-            <div class="logo">SZD <span>Consulting</span></div>
+            <div class="logo">
+                <img src="logo.png" alt="SZD Consulting Logo"> </div>
             <ul class="nav-links">
-                <li><a href="#science">科學實證</a></li>
-                <li><a href="#features">產品優勢</a></li>
+                <li><a href="#about">專業資質</a></li>
+                <li><a href="#features">核心技術</a></li>
                 <li><a href="#comparison">規格對比</a></li>
-                <li><a href="#contact">聯絡我們</a></li>
+                <li><a href="#contact">聯絡諮詢</a></li>
             </ul>
         </div>
     </nav>
@@ -140,87 +111,85 @@
         <div class="container">
             <h1>HY-90 頂級氫氣機</h1>
             <p class="tagline">開啟 5N5 純淨氫活時代</p>
-            <p class="hero-desc">結合日本頂尖核心技術與精密工藝，經國立中央大學大氣分析實驗室驗證，為您提供最純淨的呼吸體驗。</p>
-            <div class="cta-group">
-                <a href="#features" class="btn btn-primary">探索核心技術</a>
-                <a href="#contact" class="btn btn-outline">預約專家諮詢</a>
-            </div>
-        </div>
+            <img src="hy90_product.png" alt="HY-90 產品主圖" class="hero-img"> </div>
     </header>
 
-    <section id="science" class="section">
+    <div class="award-section">
         <div class="container">
-            <h2 class="section-title">為什麼選擇氫分子保健？</h2>
-            <div class="grid grid-2">
-                <div class="glass-card">
-                    <span class="icon">🔬</span>
-                    <h3>奈米級穿透力</h3>
-                    <p>氫氣是已知最小的分子，能迅速擴散至全身並穿透細胞膜，精準代謝為水，過程無副作用且零負擔。</p>
+            <div class="award-badge">
+                <img src="award.png" alt="台灣金玉獎" class="award-img"> <div class="award-text">
+                    <h4>榮獲【台灣優良產品金玉獎】肯定</h4>
+                    <p>國家級品質認證，給您最值得信賴的健康承諾。</p>
                 </div>
-                <div class="glass-card">
-                    <span class="icon">🛡️</span>
-                    <h3>靶向消除自由基</h3>
-                    <p>選擇性中和對人體有害的自由基（ROS），而不干擾正常的生物訊號傳遞，維持體內氧化還原平衡。</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="personal-section">
+        <div class="container">
+            <h2 class="section-title">創辦人的嚴選態度</h2>
+            <div class="personal-container">
+                <img src="cert_personal.png" alt="日本舞踊專業證照" class="cert-img"> <div class="personal-text">
+                    <h3>藝術、嚴謹與管理的融合</h3>
+                    <p>SZD Consulting 創辦人擁有超過 15 年的跨國專案管理與文化營運經驗。作為一名獲得「日本舞踊」國際認證的專業舞者，創辦人將日本文化中對「細節」與「禮儀」的極致追求應用於產品篩選中。</p>
+                    <p style="margin-top: 15px; font-weight: bold; color: var(--primary-green);">我們以藝術家的嚴謹，為您挑選真正具備精密工藝與實質健康價值的尖端科技。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="section" style="background-color: #f0f4f4;">
+    <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">HY-90 三大核心技術</h2>
+            <h2 class="section-title">HY-90 核心競爭力</h2>
             <div class="grid grid-3">
                 <div class="feature-card">
-                    <span class="icon">🇯🇵</span>
-                    <h3>日本 AGC 膜材</h3>
-                    <p>搭載日本 AGC 旭硝子質子交換膜，低電壓高效產氫，穩定性極佳且絕不產生臭氧。</p>
+                    <h3>日本核心技術</h3>
+                    <p>搭載日本 AGC 旭硝子質子交換膜，具備高穩定性與低電壓產氫特性，確保呼吸路徑絕對安全純淨。</p>
                 </div>
                 <div class="feature-card">
-                    <span class="icon">💎</span>
                     <h3>5N5 極致純度</h3>
-                    <p>氫氣純度 ≥ 99.9995%，不僅符合且超越美國 FDA 4N5 醫療級標準。</p>
+                    <p>氫氣純度達 ≥ 99.9995%，超越 FDA 醫療級標準，並經國立中央大學實驗室權威認證。</p>
                 </div>
                 <div class="feature-card">
-                    <span class="icon">❄️</span>
-                    <h3>超導體散熱系統</h3>
-                    <p>獨家金屬散熱外殼構造，經測試支援連續使用 12 小時不過熱，機器性能不衰減。</p>
+                    <h3>軍規散熱壽命</h3>
+                    <p>專利金屬散熱外殼，可連續 12 小時高效率運作不發燙，機芯耐用壽命高達 6000 小時以上。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="comparison" class="section">
+    <section id="comparison" class="section" style="background: white;">
         <div class="container">
-            <h2 class="section-title">專業數據對比</h2>
+            <h2 class="section-title">規格決定價值</h2>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>比較項目</th>
-                            <th class="active-col">HY-90 (本機)</th>
-                            <th>市售一般他牌</th>
+                            <th>項目</th>
+                            <th class="active-col">HY-90 (旗艦版)</th>
+                            <th>他牌常見機型</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>核心薄膜</td>
-                            <td class="active-col">日本 AGC 旭硝子 (頂規)</td>
-                            <td>一般或杜邦膜 (易衰減)</td>
+                            <td>核心膜材</td>
+                            <td class="active-col">日本 AGC 旭硝子</td>
+                            <td>一般低價膜/杜邦膜</td>
                         </tr>
                         <tr>
-                            <td>氫氣純度</td>
-                            <td class="active-col">≥ 99.9995% (5N5)</td>
-                            <td>約 99.9% (4N)</td>
+                            <td>連續產氫</td>
+                            <td class="active-col">12 小時不間斷</td>
+                            <td>約 3-5 小時易過熱</td>
                         </tr>
                         <tr>
-                            <td>耐用壽命</td>
-                            <td class="active-col">≥ 6000 小時</td>
-                            <td>約 1500 小時</td>
+                            <td>智慧偵測</td>
+                            <td class="active-col">TFT 彩色螢幕 / 自動偵測水質</td>
+                            <td>簡易燈號 / 無偵測功能</td>
                         </tr>
                         <tr>
-                            <td>連續運作</td>
-                            <td class="active-col">12 小時 (高效散熱)</td>
-                            <td>5 小時 (過熱需停機)</td>
+                            <td>產氣流量</td>
+                            <td class="active-col">500 cc/min (智慧調節)</td>
+                            <td>固定小流量</td>
                         </tr>
                     </tbody>
                 </table>
@@ -230,25 +199,21 @@
 
     <footer id="contact" class="footer">
         <div class="container">
-            <div class="grid grid-2">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
                 <div>
-                    <h3>技術參數總覽</h3>
-                    <ul class="footer-list">
-                        <li>產氣流量：250 / 500 cc/min (智慧調節)</li>
-                        <li>核心技術：PEM 質子交換膜 (氫氧分離)</li>
-                        <li>操作界面：4.3 吋 TFT 彩色觸控螢幕</li>
-                        <li>安全機制：自動水質偵測與阻塞警示</li>
-                    </ul>
+                    <h3>技術規格摘要</h3>
+                    <p>● 技術：PEM 質子交換膜 / 氫氧分離</p>
+                    <p>● 流量：250 / 500 cc/min 可切換</p>
+                    <p>● 電壓：110V 全域支援</p>
                 </div>
                 <div style="text-align: right;">
-                    <h3>聯繫我們</h3>
-                    <p style="color: white; font-size: 1.2rem;">笙智達 (SZD Consulting)</p>
-                    <p>專業代理 ‧ 技術支援 ‧ 售後指導</p>
-                    <p style="margin-top: 15px;">致力於引領台灣進入純淨氫能源健康時代</p>
+                    <h3>笙智達 (SZD Consulting)</h3>
+                    <p>專業代理 ‧ 品牌營運 ‧ 健康諮詢</p>
+                    <p style="margin-top: 10px;">引領台灣進入純淨氫活新紀元</p>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 SZD Consulting. All Rights Reserved. 專業代理：HY-90 頂級氫氣機系列。
+            <div style="text-align: center; margin-top: 50px; border-top: 1px solid #444; padding-top: 20px; font-size: 0.8rem;">
+                &copy; 2026 SZD Consulting. All Rights Reserved.
             </div>
         </div>
     </footer>
