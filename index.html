@@ -328,3 +328,43 @@
 
 </body>
 </html>
+const sheetName = '工作表1'; // 如果您的工作表名稱不同請在此修改
+
+function doPost(e) {
+  try {
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    let sheet = ss.getSheetByName(sheetName);
+    
+    // 如果找不到指定名稱的工作表，則使用第一個
+    if (!sheet) {
+      sheet = ss.getSheets()[0];
+    }
+    
+    // 獲取表單參數
+    const name = e.parameter.name;
+    const phone = e.parameter.phone;
+    const email = e.parameter.email;
+    const company = e.parameter.company || '未填寫';
+    const location = e.parameter.location || '未填寫';
+    const timestamp = new Date();
+    
+    // 將資料寫入表格下一行
+    // 欄位順序：時間, 姓名, 電話, 郵箱, 公司名稱, 公司地區
+    sheet.appendRow([timestamp, name, phone, email, company, location]);
+    
+    // 回傳成功訊息給前端
+    return ContentService.createTextOutput("Success")
+      .setMimeType(ContentService.MimeType.TEXT);
+      
+  } catch (error) {
+    // 發生錯誤時回傳錯誤訊息
+    return ContentService.createTextOutput("Error: " + error.message)
+      .setMimeType(ContentService.MimeType.TEXT);
+  }
+}
+
+// 處理 CORS 預檢請求
+function doOptions(e) {
+  return ContentService.createTextOutput("")
+    .setMimeType(ContentService.MimeType.TEXT);
+}
