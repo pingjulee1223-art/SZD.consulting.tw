@@ -160,10 +160,21 @@
 
     <!-- 導覽列 -->
     <nav>
-        <a href="#" class="flex items-center gap-6 hover:opacity-80 transition-opacity">
-    <img src="Logo.jpg" alt="SZD Logo" class="h-[85px] w-auto object-contain">
-    <div class="text-4xl font-black text-slate-800 tracking-tight">SZD <span class="text-teal-700">Consulting</span></div>
-</a>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <!-- 檔案名稱：Logo.jpg -->
+                <img src="Logo.jpg" alt="笙智達 SZD Consulting Logo">
+                <div class="logo-text">SZD <span>Consulting</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">核心技術</a></li>
+                <li><a href="#details">旗艦細節</a></li>
+                <li><a href="#comparison">效能比較</a></li>
+                <li><a href="#specs">技術參數</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- 英雄區 -->
     <header class="hero">
         <div class="container hero-content">
@@ -173,16 +184,7 @@
                 <!-- 更新為實機質感主圖：product.png -->
                 <img src="product.png" alt="HY-90 旗艦機型實機質感" class="hero-img">
             </div>
-            <p style=```css
-/* 加入 CSS 動態效果 */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeInUp { animation: fadeInUp 1s ease-out forwards; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-400 { animation-delay: 0.4s; }
-                "max-width: 800px; margin: 0 auto 40px; opacity: 0.95; font-size: 1.3rem; font-weight: 300;">日本頂尖核心技術 x 台灣精密工藝，經國立中央大學權威驗證，給您最純淨的呼吸體驗。</p>
+            <p style="max-width: 800px; margin: 0 auto 40px; opacity: 0.95; font-size: 1.3rem; font-weight: 300;">日本頂尖核心技術 x 台灣精密工藝，經國立中央大學權威驗證，給您最純淨的呼吸體驗。</p>
             <a href="#details" class="btn-main">立即探索</a>
         </div>
     </header>
