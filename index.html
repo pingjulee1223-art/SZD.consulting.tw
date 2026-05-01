@@ -355,33 +355,43 @@
     </section>
     
     <!-- 底部參數與聯絡 -->
-    <section id="specs" class="py-24 bg-[#1a2525]">
-    <div class="container mx-auto px-6 max-w-4xl">
-        <h2 class="text-3xl font-bold text-white mb-10 border-l-4 border-teal-500 pl-4">技術參數總覽</h2>
-        <div class="space-y-4">
-            <div class="flex justify-between py-4 border-b border-white/10 text-slate-300">
-                <span>產氣流量</span><span>250 / 500 cc/min (智慧調節)</span>
-            </div>
-            <div class="flex justify-between py-4 border-b border-white/10 text-slate-300 text-sm">
-                <span>電壓功耗</span><span>110V / 低耗電節能設計</span>
+    <footer class="footer" id="specs">
+        <div class="container footer-grid">
+            <div class="spec-info">
+                <h3>技術參數總覽</h3>
+                <ul class="spec-list">
+                    <li><strong>產氣流量</strong> 250 / 500 cc/min (智慧調節)</li>
+                    <li><strong>核心技術</strong> PEM 質子交換膜 (氫氧分離技術)</li>
+                    <li><strong>運作模式</strong> 純水電解 / 支援雙人共享模式</li>
+                    <li><strong>智慧偵測</strong> 自動水質檢測、水位監控、管路阻塞偵測</li>
+                    <li><strong>電壓功耗</strong> 110V / 低耗電節能設計</li>
+                </ul>
             </div>
         </div>
-    </div>
-</section>
+    </section>
             <div class="contact-box">
-<section id="contact" class="py-24 bg-white relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-64 h-64 bg-teal-50 rounded-full blur-3xl opacity-50"></div>
-    
-    <div class="container mx-auto px-6 max-w-4xl relative z-10">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">聯繫我們 REACH OUT</h2>
-        <p class="text-center text-slate-500 mb-12">如果您對 HY-90 的科學實證有更多興趣，歡迎留下資訊由專員為您解說</p>
+<section id="contact" class="py-24 bg-slate-50">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black text-slate-900 mb-4">聯繫我們 <span class="text-teal-600">REACH OUT</span></h2>
+            <p class="text-slate-500 font-medium">如果您對 HY-90 的科學實證有更多興趣，歡迎留下資訊由專員為您解說</p>
+        </div>
         
-        <form id="contact-form" class="bg-slate-50 p-8 md:p-12 rounded-[40px] shadow-2xl border border-slate-100">
-            <div class="grid md:grid-cols-2 gap-6 mb-6">
-                <input type="text" name="name" required class="w-full bg-white border border-slate-200 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-teal-500 transition-all" placeholder="您的姓名 *">
-                <input type="tel" name="phone" required class="w-full bg-white border border-slate-200 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-teal-500 transition-all" placeholder="聯絡電話 *">
+        <form id="contact-form" class="bg-white/70 backdrop-blur-md border border-white shadow-2xl rounded-[40px] p-8 md:p-12">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <input type="text" name="name" required class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="您的姓名 *">
+                <input type="tel" name="phone" required class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="聯絡電話 *">
             </div>
-            <button type="submit" class="w-full bg-teal-700 text-white font-bold py-5 rounded-2xl hover:bg-teal-800 transition-all text-lg tracking-widest shadow-lg shadow-teal-700/20">
+            <div class="mb-8">
+                <input type="email" name="email" required class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="電子郵箱 *">
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <input type="text" name="company" class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="公司名稱 (選填)">
+                <input type="text" name="location" class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="公司地區 (選填)">
+            </div>
+            <textarea name="message" class="w-full bg-white/50 border border-slate-200 rounded-[30px] px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all h-32 mb-8" placeholder="請描述您的需求..."></textarea>
+            
+            <button type="submit" id="submit-btn" class="w-full bg-teal-700 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-teal-800 transition-all transform hover:scale-[1.01] active:scale-[0.98] text-lg tracking-widest">
                 送出諮詢申請
             </button>
         </form>
@@ -410,30 +420,22 @@
                 btn.disabled = false;
                 btn.innerHTML = '重新送出';
             });
-    });
+    }); 
 </script>
-
-</div> 
-</section>
-
-<footer class="bg-black py-20 text-center">
-    <div class="container mx-auto px-6">
-        <h3 class="text-teal-500 text-2xl font-bold mb-8 tracking-[0.4em]">笙智達 (SZD Consulting)</h3>
-        
-        <div class="flex flex-col items-center text-slate-400 space-y-2 mb-10">
-            <p class="tracking-widest">專業代理 ‧ 技術支持 ‧ 健康諮詢</p>
-            <p class="tracking-widest">致力於引領台灣進入純淨氫活新紀元</p>
+</div>
+</section> 
+                <p style="color: var(--secondary); font-weight: 700; font-size: 1.5rem;">笙智達 (SZD Consulting)</p>
+                <p>專業代理 ‧ 技術支持 ‧ 健康諮詢</p>
+                <p>致力於引領台灣進入純淨氫活新紀元</p>
+                <div style="margin-top: 40px; border-left: 4px solid var(--secondary); padding-left: 20px;">
+                    <p style="font-style: italic;">「投資健康，從選對『氫』開始」</p>
+                </div>
+            </div>
         </div>
-
-        <div class="inline-block border-l-4 border-teal-500 pl-6 text-left mb-16">
-            <p class="text-slate-200 italic text-xl">「投資健康，從選對『氫』開始」</p>
+        <div class="copyright">
+            &copy; 2026 SZD Consulting. All Rights Reserved. 專業代理：HY-90 頂級氫氣機系列。
         </div>
-
-        <p class="text-slate-600 text-sm tracking-widest pt-10 border-t border-white/5">
-            © 2026 SZD Consulting. All Rights Reserved. 專業代理：HY-90 頂級氫氣機系列。
-        </p>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>
