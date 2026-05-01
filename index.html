@@ -369,28 +369,19 @@
     </div>
 </section>
             <div class="contact-box">
-<section id="contact" class="py-24 bg-slate-50">
-    <div class="container mx-auto px-6 max-w-4xl">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-black text-slate-900 mb-4">聯繫我們 <span class="text-teal-600">REACH OUT</span></h2>
-            <p class="text-slate-500 font-medium">如果您對 HY-90 的科學實證有更多興趣，歡迎留下資訊由專員為您解說</p>
-        </div>
+<section id="contact" class="py-24 bg-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-teal-50 rounded-full blur-3xl opacity-50"></div>
+    
+    <div class="container mx-auto px-6 max-w-4xl relative z-10">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">聯繫我們 REACH OUT</h2>
+        <p class="text-center text-slate-500 mb-12">如果您對 HY-90 的科學實證有更多興趣，歡迎留下資訊由專員為您解說</p>
         
-        <form id="contact-form" class="bg-white/70 backdrop-blur-md border border-white shadow-2xl rounded-[40px] p-8 md:p-12">
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <input type="text" name="name" required class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="您的姓名 *">
-                <input type="tel" name="phone" required class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="聯絡電話 *">
+        <form id="contact-form" class="bg-slate-50 p-8 md:p-12 rounded-[40px] shadow-2xl border border-slate-100">
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <input type="text" name="name" required class="w-full bg-white border border-slate-200 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-teal-500 transition-all" placeholder="您的姓名 *">
+                <input type="tel" name="phone" required class="w-full bg-white border border-slate-200 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-teal-500 transition-all" placeholder="聯絡電話 *">
             </div>
-            <div class="mb-8">
-                <input type="email" name="email" required class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="電子郵箱 *">
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <input type="text" name="company" class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="公司名稱 (選填)">
-                <input type="text" name="location" class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all" placeholder="公司地區 (選填)">
-            </div>
-            <textarea name="message" class="w-full bg-white/50 border border-slate-200 rounded-[30px] px-6 py-4 focus:ring-4 focus:ring-teal-500/20 outline-none transition-all h-32 mb-8" placeholder="請描述您的需求..."></textarea>
-            
-            <button type="submit" id="submit-btn" class="w-full bg-teal-700 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-teal-800 transition-all transform hover:scale-[1.01] active:scale-[0.98] text-lg tracking-widest">
+            <button type="submit" class="w-full bg-teal-700 text-white font-bold py-5 rounded-2xl hover:bg-teal-800 transition-all text-lg tracking-widest shadow-lg shadow-teal-700/20">
                 送出諮詢申請
             </button>
         </form>
